@@ -9,6 +9,32 @@ public class Validation  {
 
     Scanner s = new Scanner(System.in);
 
+   final String[] category = competition_weight.getCategory();
+
+
+   void category_weight_input()
+   {
+       System.out.print("Please enter your competition weight category: ");
+       String input = s.nextLine();
+
+       boolean flag = false;
+
+       for(int i = 0, l = category.length; i < l; i++)
+       {
+           if(category[i].equalsIgnoreCase(input))
+           {
+               flag = true;
+           }
+       }
+
+       if(!flag)
+       {
+           category_weight_input();
+       }
+   }
+
+
+
      char apply_private_hours()
     {
         display.private_hours();
@@ -18,6 +44,7 @@ public class Validation  {
 
         if(!(choice == 'y') || !(choice == 'n'))
         {
+            System.out.println("\nPlease only enter 'y' or 'n'\n");
             apply_private_hours();
         }
 

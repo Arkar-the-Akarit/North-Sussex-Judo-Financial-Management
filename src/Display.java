@@ -59,6 +59,8 @@ public class Display {
         System.out.println("------------------------------------------------------");
     }
 
+
+
     private int max_length(String s[])
     {
         int max = 0;
@@ -74,7 +76,7 @@ public class Display {
 
     void private_hours()
     {
-        System.out.println("\nPrivate tuition will cost $ 9.00 per hour.");
+        System.out.println("Private tuition will cost $ 9.00 per hour.");
         System.out.println("Would you like to apply for private tuition? (y/n) : ");
     }
 

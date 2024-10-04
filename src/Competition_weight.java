@@ -15,20 +15,6 @@ public class Competition_weight {
         return limit;
     }
 
-    boolean input_validation(String s)
-    {
-        for(int i = 0, l = category.length; i < l; i++)
-        {
-            if(category[i].equalsIgnoreCase(s))
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-
-
-
 
 
 }
