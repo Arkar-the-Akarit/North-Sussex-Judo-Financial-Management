@@ -32,6 +32,8 @@ public class Main{
             input_plan = s.nextLine();
         }
 
+        System.out.println("Congratulations, you have enrolled for "+athlete.training_plan+" level training plan.\n");
+
         System.out.print("Please enter your current weight (kg) in numbers: ");
         while(!(s.hasNextInt()))
         {

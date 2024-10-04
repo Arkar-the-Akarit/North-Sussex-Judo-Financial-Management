@@ -3,8 +3,9 @@
 public class Training_Plan
 {
 
-    // Aggregation
-    Athlete athlete;
+    Athlete athlete = new Athlete();
+    Total_fee fee = new Total_fee();
+
 
     // Training Plan is constant
   final private  String[] training_plan = {"beginner","intermediate","elite"};
@@ -17,6 +18,7 @@ public class Training_Plan
             if(training_plan[i].equalsIgnoreCase(athlete_plan))
             {
                 athlete.training_plan = training_plan[i];
+                fee.training_fee = plan_fee[i];
                 return true;
             }
         }
