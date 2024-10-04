@@ -8,7 +8,7 @@ public class Training_Plan
 
 
     // Training Plan is constant
-  final private  String[] training_plan = {"beginner","intermediate","elite"};
+  final private  String[] training_plan = {"Beginner","Intermediate","Elite"};
   final private float[] plan_fee = {25, 30, 35} ;
 
   boolean input_validation(String athlete_plan,Athlete athlete )
