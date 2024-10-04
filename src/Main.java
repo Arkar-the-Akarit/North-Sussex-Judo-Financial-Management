@@ -11,6 +11,8 @@ public class Main{
         Display display = new Display();
         Athlete athlete = new Athlete();
         Training_Plan training_plan = new Training_Plan();
+        Competition_weight competition_weight = new Competition_weight();
+        Validation validation = new Validation();
 
         display.welcome();
 
@@ -46,6 +48,26 @@ public class Main{
         athlete.current_weight = weight;
 
         display.weight_category();
+        System.out.println("Please enter your competition weight category: ");
+        String input_competition_weight = s.nextLine();
+
+        while(!competition_weight.input_validation(input_competition_weight))
+        {
+            System.out.println("Please only choose from available category.");
+            System.out.print("Please enter your competition weight category: ");
+            input_competition_weight = s.next();
+        }
+
+        char choice;
+
+        if(athlete.competition)
+        {
+            choice = validation.apply_private_hours();
+
+        }
+
+
+
 
 
     }

@@ -15,12 +15,21 @@ public class Training_Plan
     {
         for(int i = 0; i < training_plan.length; i++)
         {
+
+            if(athlete_plan.equalsIgnoreCase("intermediate") ||
+                    athlete_plan.equalsIgnoreCase("elite"))
+            {
+                athlete.competition = true;
+            }
+
             if(training_plan[i].equalsIgnoreCase(athlete_plan))
             {
                 athlete.training_plan = training_plan[i];
                 fee.training_fee = plan_fee[i];
                 return true;
             }
+
+
         }
         return false;
     }

@@ -35,7 +35,9 @@ public class Display {
 
         for (int i = 0, l = plan.length; i < l ; i++)
         {
-            System.out.printf("Plan: %-"+max+"s -- %d session per week -- fee $ %2f\n",
+            System.out.printf("Plan - [%d] : %-"+max+"s -- %d session per week -- fee $" +
+                            " " +
+                            "%2f\n",i,
                     plan[i],session_time[i],fee[i]);
         }
 
@@ -51,7 +53,7 @@ public class Display {
         for (int i = 0, l = category.length; i < l ; i++)
         {
             // %- for left align, concatenate for dynamic value, "s for format specifier
-            System.out.printf("Category: %-"+max+"s --- Upper weight limit (kg): %s\n",
+            System.out.printf("[%d] -- %-"+max+"s --- Upper weight limit (kg): %s\n",i,
                     category[i],limit[i]);
         }
         System.out.println("------------------------------------------------------");
@@ -69,5 +71,13 @@ public class Display {
         }
         return max;
     }
+
+    void private_hours()
+    {
+        System.out.println("\nPrivate tuition will cost $ 9.00 per hour.");
+        System.out.println("Would you like to apply for private tuition? (y/n) : ");
+    }
+
+
 
 }
