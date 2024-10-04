@@ -45,7 +45,7 @@ public class Main{
         int weight = s.nextInt();
         athlete.current_weight = weight;
 
-
+        
 
 
     }
