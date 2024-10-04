@@ -1,42 +1,36 @@
 public class Display {
 
-
+    // Fileds & Objects of Training Plan class
+    Training_Plan training_plan = new Training_Plan();
+    String[] plan = training_plan.getTraining_plan();
+    float[]  fee = training_plan.getPlan_fee();
 
     void welcome()
     {
-        System.out.println("--- Welcome to North Sussex Judo ---");
-        System.out.println("------------------------------------");
+        System.out.println("\n---//============================\\\\---");
+        System.out.println("--|| Welcome to North Sussex Judo ||--");
+        System.out.println("---\\\\============================//---\n");
     }
 
     void name_hello(String name)
     {
-        System.out.println("Hello, "+name);
+        System.out.println("\nHello, <<"+name+">>");
     }
 
     void training_plan()
     {
-        System.out.println("Fee for our current training plans are as follow: ");
+        int[] session_time = {2,3,5};
 
-        System.out.printf("Beginner ----- ");
-        training_fee_info(2,25);
+        System.out.println("This is our current training plan: ");
+        System.out.println("====================================");
 
-        System.out.printf("Intermediate --");
-        training_fee_info(3,30);
+        for (int i = 0, l = plan.length; i < l ; i++)
+        {
+            System.out.println(plan[i]+" --  "+session_time[i]+" sessions per week --- " +
+                    "fee $  "+String.format("%.2f",fee[i]));
+        }
 
-        System.out.printf("Elite ---------");
-        training_fee_info(5,35);
-
+        System.out.println("------------------------------------");
     }
-
-    private  void training_fee_info(int num, float fee)
-    {
-        System.out.println(num+" sessions per week -- fee -- $ "+String.format("%.2f",
-                fee));
-
-    }
-
-
-
-
 
 }

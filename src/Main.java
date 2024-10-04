@@ -7,25 +7,41 @@ public class Main{
 
         Scanner s = new Scanner(System.in);
 
-        // Display object
+        // Object Declaraion
         Display display = new Display();
+        Athlete athlete = new Athlete();
+        Training_Plan training_plan = new Training_Plan();
+
         display.welcome();
 
-        // Athlete object
-        Athlete athlete = new Athlete();
-
-        System.out.println("Please enter your name: ");
+        System.out.print("Please enter your name: ");
         athlete.name = s.nextLine();
 
         display.name_hello(athlete.name);
+
+
         display.training_plan();
 
-        System.out.println("Enter your current weight: ");
-        athlete.current_weight = s.nextInt();
+        System.out.print("Please choose your training plan: ");
+        String input_plan = s.nextLine();
 
-        // Training Plan object
-        Training_Plan training_plan = new Training_Plan();
-        training_plan.validation(athlete.training_plan,beginner)
+        while(!(training_plan.input_validation(input_plan,athlete)))
+        {
+            System.out.println("Please only choose the available plan.");
+            System.out.print("Please choose your training plan: ");
+            input_plan = s.nextLine();
+        }
+
+        System.out.print("Please enter your current weight (kg) in numbers: ");
+        while(!(s.hasNextInt()))
+        {
+            System.out.println("Please only enter in numbers");
+            System.out.print("Please enter your current weight (kg) in number: ");
+            s.next();
+        }
+
+        int weight = s.nextInt();
+        athlete.current_weight = weight;
 
 
 
