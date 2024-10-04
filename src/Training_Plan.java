@@ -33,7 +33,7 @@ public class Training_Plan
                 }
 
                 athlete.training_plan = training_plan[i];
-                fee.training_fee = plan_fee[i];
+                fee.setTraining_plan(plan_fee[i]);
                 return true;
             }
 

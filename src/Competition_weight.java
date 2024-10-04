@@ -16,5 +16,13 @@ public class Competition_weight {
     }
 
 
+    private int num_of_competition;
 
+    public int getNum_of_competition() {
+        return num_of_competition;
+    }
+
+    public void setNum_of_competition(int num_of_competition) {
+        this.num_of_competition = num_of_competition;
+    }
 }

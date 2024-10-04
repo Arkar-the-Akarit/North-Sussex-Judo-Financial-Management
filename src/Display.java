@@ -74,6 +74,13 @@ public class Display {
         return max;
     }
 
+    void num_of_competitions()
+    {
+        System.out.print("Please enter number of competition you entered this month: " +
+                "");
+    }
+
+
     void private_hours()
     {
         System.out.println("Private tuition will cost $ 9.00 per hour.");

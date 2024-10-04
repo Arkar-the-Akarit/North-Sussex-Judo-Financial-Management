@@ -78,15 +78,31 @@ public class Main{
         // --------- Competition Weight Category Ended --------------------------
 
 
+        // --------- Num of Competition Starts ------------------------------
 
-        // ------------ Private hours Starts ----------------------------------
-        char choice;
+        // Competition is true only for inter & elite
         if(athlete.competition)
         {
-            choice = validation.apply_private_hours();
-
 
         }
+
+
+
+        //----------- Num of Competition Ended ---------------------------
+
+
+        // ------------ Private hours Starts ----------------------------------
+
+
+            char choice = validation.apply_private_hours();
+
+            validation.total_private_hours(choice);
+
+
+        //------------- Private hours Ended -------------------------------------
+
+
+        //-----------------
 
 
 
