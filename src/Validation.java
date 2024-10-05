@@ -22,6 +22,8 @@ public class Validation {
         if(s.hasNextInt())
         {
             int weight = s.nextInt();
+            s.nextLine();  // to consume leftover new line char, so it doesn't affect
+            // next time scanner is used
             current_weight(weight);
         }
         else
