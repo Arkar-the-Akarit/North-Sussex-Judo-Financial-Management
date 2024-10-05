@@ -43,13 +43,7 @@ public class Main{
 
         // -------------------- Current Weight Starts ----------------------------------
 
-        System.out.print("Please enter your current weight (kg) in numbers: ");
-        while(!(s.hasNextInt()))
-        {
-            System.out.println("Please only enter in numbers");
-            System.out.print("Please enter your current weight (kg) in number: ");
-            s.next();
-        }
+        validation.current_weight_input_type();
 
         // -------------------- Current Weight Ended -----------------------------------
 

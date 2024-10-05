@@ -14,7 +14,44 @@ public class Validation {
     final String[] category = competition_weight.getCategory();
 
 
+
+    void current_weight_input_type()
+    {
+        System.out.print("Please input your current weight (kg) : ");
+
+        if(s.hasNextInt())
+        {
+            int weight = s.nextInt();
+            current_weight(weight);
+        }
+        else
+        {
+            s.next();
+            System.out.println("Please only input positive numbers");
+            current_weight_input_type();
+        }
+    }
+
+    void current_weight(int weight)
+    {
+        if(weight < 40)
+        {
+            System.out.println("You must weigh at least 40kg to participate in our judo" +
+                    " classes.");
+            current_weight_input_type();
+        }
+        else
+        {
+            athlete.current_weight = weight;
+        }
+    }
+
+
+
     void category_weight_input() {
+
+
+
         System.out.print("Please enter your competition weight category: ");
         String input = s.nextLine();
 
@@ -23,6 +60,7 @@ public class Validation {
         for (int i = 0, l = category.length; i < l; i++) {
             if (category[i].equalsIgnoreCase(input)) {
                 flag = true;
+                break;
             }
         }
 

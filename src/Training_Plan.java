@@ -15,9 +15,6 @@ public class Training_Plan
     {
         for(int i = 0; i < training_plan.length; i++)
         {
-
-
-
             if(training_plan[i].equalsIgnoreCase(athlete_plan))
             {
 
@@ -36,7 +33,6 @@ public class Training_Plan
                 fee.setTraining_plan(plan_fee[i]);
                 return true;
             }
-
 
         }
         return false;
