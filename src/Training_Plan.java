@@ -3,10 +3,6 @@
 public class Training_Plan
 {
 
-    Athlete athlete = new Athlete();
-    Total_fee fee = new Total_fee();
-
-
     // Training Plan is constant
   final private  String[] training_plan = {"Beginner","Intermediate","Elite"};
   final private float[] plan_fee = {25, 30, 35} ;
@@ -30,7 +26,8 @@ public class Training_Plan
                 }
 
                 athlete.training_plan = training_plan[i];
-                fee.setTraining_plan(plan_fee[i]);
+                athlete.total_fee.training_plan = plan_fee[i];
+
                 return true;
             }
 

@@ -7,15 +7,17 @@ public class Main{
 
         Scanner s = new Scanner(System.in);
 
-        // Object Declaraion
+
         Display display = new Display();
-        Athlete athlete = new Athlete();
-        Training_Plan training_plan = new Training_Plan();
-        Competition_weight competition_weight = new Competition_weight();
-        Validation validation = new Validation();
+
+
+
+
 
         display.welcome();
 
+
+        Athlete athlete = new Athlete();
         System.out.print("Please enter your name: ");
         athlete.name = s.nextLine();
 
@@ -25,6 +27,8 @@ public class Main{
         // ----------------------- Training_plan starts ------------------------------
 
         display.training_plan();
+
+        Training_Plan training_plan = new Training_Plan();
 
         System.out.print("Please choose your training plan: ");
         String input_plan = s.nextLine();
@@ -43,7 +47,9 @@ public class Main{
 
         // -------------------- Current Weight Starts ----------------------------------
 
-        validation.current_weight_input_type();
+        Validation validation = new Validation();
+
+        validation.current_weight_input_type(athlete);
 
         // -------------------- Current Weight Ended -----------------------------------
 
@@ -65,8 +71,9 @@ public class Main{
 //            input_competition_weight = s.next();
 //        }
 
+
          display.weight_category();
-         validation.category_weight_input();
+         validation.category_weight_input(athlete);
 
 
         // --------- Competition Weight Category Ended --------------------------
@@ -77,7 +84,7 @@ public class Main{
         // Competition is true only for inter & elite
         if(athlete.competition)
         {
-
+            validation.num_of_competitions_input(athlete);
         }
 
 
@@ -88,15 +95,19 @@ public class Main{
         // ------------ Private hours Starts ----------------------------------
 
 
-            char choice = validation.apply_private_hours();
+          validation.apply_private_hours(athlete);
 
-            validation.total_private_hours(choice);
 
 
         //------------- Private hours Ended -------------------------------------
 
 
-        //-----------------
+
+
+        //----------------- Final Output starts ------------------------------
+
+
+        display.final_output(athlete);
 
 
 
