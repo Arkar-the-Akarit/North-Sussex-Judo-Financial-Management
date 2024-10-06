@@ -12,6 +12,20 @@ public class Athlete
 
     Total_fee total_fee = new Total_fee();
 
+    void competition_condition(String t_plan)
+    {
+        training_plan = t_plan;
+
+
+        if(t_plan.equalsIgnoreCase("beginner"))
+        {
+            competition = false;
+            return;
+        }
+
+        competition = true;
+
+    }
 
 
 

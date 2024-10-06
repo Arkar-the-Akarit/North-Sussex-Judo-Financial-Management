@@ -2,20 +2,37 @@ import java.util.Scanner;
 
 public class Validation {
 
+    Scanner s = new Scanner(System.in);
+
+    Training_Plan training_plan = new Training_Plan();
+
+    void training_plan(Athlete a)
+    {
+        System.out.print("Please choose your training plan: ");
+        String input = s.nextLine();
+
+        Boolean flag = training_plan.match(a,input);
+
+        if(!flag)
+        {
+            System.out.println("Please only input the name of training plan you want to" +
+                    " attend\n");
+            training_plan(a);
+
+        }
+    }
+
+
 
     Competition_weight competition_weight = new Competition_weight();
 
     final float entryFee = 22.00F;
 
-    Scanner s = new Scanner(System.in);
-
     final String[] category = competition_weight.getCategory();
-
-
 
     void current_weight_input_type(Athlete a)
     {
-        System.out.print("Please input your current weight (kg) : ");
+        System.out.print("\nPlease input your current weight (kg) : ");
 
         if(s.hasNextInt())
         {
@@ -58,7 +75,6 @@ public class Validation {
         for (int i = 0, l = category.length; i < l; i++) {
             if (category[i].equalsIgnoreCase(input)) {
                 flag = true;
-                a.competition = true;
                 break;
             }
         }
@@ -83,9 +99,8 @@ public class Validation {
                 num_of_competitions_input(a);
             }
 
-            // Idky, if i dont check like this, the frist negative value is kept in a
-            // .nOC even the program shouldn't reach here cz of recursion :( :( sob sob
-
+            /* Idky, if i don't check like this, the first negative value is kept in
+            a.nOC even the program shouldn't reach here cz of recursion :( :( sob sob */
             if(total_num > 0)
             {
                 a.num_of_competitions = total_num;

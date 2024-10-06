@@ -1,6 +1,5 @@
 public class Competition_weight {
 
-    Athlete athlete = new Athlete();
 
     final private String[] category = {"Flyweight","Lightweight","light-Middlewight",
             "Middleweight","Light-Heavyweight","Heavyweight"};

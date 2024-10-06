@@ -48,7 +48,7 @@ public class Display {
     {
         int max = max_length(category);
 
-        System.out.println("This is competition weight category with limits (kg)");
+        System.out.println("\nThis is competition weight category with limits (kg)");
         System.out.println("====================================================");
         for (int i = 0, l = category.length; i < l ; i++)
         {
@@ -76,27 +76,6 @@ public class Display {
     {
         System.out.println("\nHello, athlete: "+ a.name);
 
-//        System.out.println("Itemized list of all costs for this month:");
-//        System.out.println("No |            Type            |   Fee per item   |     " +
-//                "Total    |");
-//        System.out.println("---------------------------------------------------------" +
-//                "---------");
-//        System.out.printf("[1] | Training Plan: %s | %c %.2f | %c %.2f |",
-//                a.training_plan,'$',a.total_fee.training_plan,'$',a.total_fee.training_plan);
-//
-//        System.out.printf("[2] | Private hours: %i | %c %f | %c %f |",
-//                a.private_coaching_hours,'$',a.total_fee.private_hours,'$',
-//                a.total_fee.private_hours);
-//
-//        System.out.printf("[3] | Participated Competition: %i | %c %f | %c %f |",
-//                a.num_of_competitions,'$',a.total_fee.competition_entry_fee,'$',
-//                a.total_fee.competition_entry_fee);
-//
-//        System.out.printf("    Total                                    | %.2f",
-//               a.total_fee.total());
-
-
-
         System.out.println(""+a.name);
         System.out.println(""+a.current_weight);
         System.out.println(""+a.competition);
@@ -107,13 +86,18 @@ public class Display {
         System.out.println(""+a.total_fee.competition_entry_fee);
 
         float p_hour = 9.00f;
-        float f = 22.00f;
+        float fee= 22.00f;
 
         System.out.println(" [1]  Training Plan: "+a.training_plan+"   $ "+a.total_fee.training_plan+"  $ "+a.total_fee.training_plan);
         System.out.println(" [2]  Private hours: "+a.private_coaching_hours+"   $ "+p_hour+
                 "  $ "+a.total_fee.private_hours);
         System.out.println(" [3]  Participated Competition: "+a.num_of_competitions+"  " +
-                " $ "+f+"  $ "+a.total_fee.competition_entry_fee);
+                " $ "+fee+"  $ "+a.total_fee.competition_entry_fee);
+
+
+        System.out.printf("[3] Participated Competition: %d  Fee per competiton: %2f  " +
+                "Total: %2f \n",a.num_of_competitions,fee, a.total_fee.competition_entry_fee);
+
         System.out.println("Total: "+ a.total_fee.total());
 
 
