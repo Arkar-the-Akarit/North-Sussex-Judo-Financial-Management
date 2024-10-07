@@ -13,9 +13,7 @@ public class Validation {
         Boolean flag = training_plan.match(a, input);
 
         if (!flag) {
-            System.out.println("\nPlease only input the name of training plan you want " +
-                    "to" +
-                    " attend");
+            System.out.println("\nPlease only input the "+asni.BLUE+"name of training"+asni.RESET+" plan you want to attend");
             training_plan(a);
 
         }
@@ -32,16 +30,15 @@ public class Validation {
             current_weight(weight, a);
         } else {
             s.next();
-            System.out.println("\nPlease only input positive numbers");
+            System.out.println("\nPlease only input "+asni.BLUE+"positive numbers"+asni.RESET);
             current_weight_input_type(a);
         }
     }
 
     void current_weight(int weight, Athlete a) {
         if (weight < 40) {
-            System.out.println("\nYou must weigh at least 40kg to participate in our " +
-                    "judo" +
-                    " classes.");
+            System.out.println("\nYou must weigh "+asni.BLUE+"at least 40kg"+asni.RESET+" " +
+                    "to participate in our judo classes.");
             current_weight_input_type(a);
         } else {
             a.current_weight = weight;
@@ -58,25 +55,28 @@ public class Validation {
 
     void category_weight_input(Athlete a) {
 
-        System.out.print("Please enter your competition weight category: ");
+        System.out.print("Please enter your "+asni.BLUE+"competition weight category"+asni.RESET+" : ");
         String input = s.nextLine();
 
         boolean flag = competition_weight.match(a, input);
 
         if (!flag) {
-            System.out.println("Please only enter your competition weight category.");
+            System.out.println("Please only enter your "+asni.BLUE+"competition weight category"+asni.RESET+".");
             category_weight_input(a);
         }
     }
 
     void num_of_competitions_input(Athlete a) {
-        System.out.print("Please enter number of competition you entered this month: ");
+        System.out.print("Please enter "+asni.BLUE+"number of competition"+asni.RESET+
+                " you" +
+                " entered this month: ");
         if (s.hasNextInt()) {
             int total_num = s.nextInt();
             s.nextLine();
 
             if (total_num < 0) {
-                System.out.println("\nPlease only input in positive numbers.");
+                System.out.println("\nPlease only input in "+asni.BLUE+"positive " +
+                        "numbers"+asni.RESET+".");
                 num_of_competitions_input(a);
             }
 
@@ -92,7 +92,7 @@ public class Validation {
         } else {
             s.next();
 
-            System.out.println("\nPlease only input in numbers.");
+            System.out.println("\nPlease only input in "+asni.BLUE+"numbers"+asni.RESET+" .");
             num_of_competitions_input(a);
         }
     }
@@ -100,7 +100,7 @@ public class Validation {
 
     void apply_private_hours(Athlete a) {
 
-        System.out.println("Private tuition will cost $ 9.00 per hour.");
+        System.out.println("Private tuition will cost $ "+asni.GREEN+"9.00"+asni.RESET+" per hour.");
         System.out.print("Would you like to apply for private tuition? (y/n) : ");
         String input = s.nextLine();
         char choice = input.charAt(0);
@@ -131,7 +131,7 @@ public class Validation {
         int total_hours;
 
         System.out.println("How many hours of private coaching would you like to " +
-                "receive? (maximum limit : 20 hours)");
+                "receive? (maximum limit : "+asni.BLUE+"20"+asni.RESET+" hours)");
         System.out.print("Coaching hours requested: ");
 
         if (s.hasNextInt()) {
@@ -141,7 +141,7 @@ public class Validation {
 
             if ((total_hours < 0) || (total_hours > 20)) {
                 System.out.println("\nPlease ensure your input is within maximum " +
-                        "limit : 20 hours\n");
+                        "limit : "+asni.BLUE+"20"+asni.RESET+" hours\n");
                 private_hours_choice(c, a);
 
             } else {
@@ -151,7 +151,7 @@ public class Validation {
             }
         } else {
             s.next();
-            System.out.println("Please only input numbers only.");
+            System.out.println("Please only input "+asni.BLUE+"numbers"+asni.RESET+" only.");
             total_private_hours(c, a);
         }
 

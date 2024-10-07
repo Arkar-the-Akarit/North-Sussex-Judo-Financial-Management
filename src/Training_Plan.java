@@ -13,7 +13,10 @@ public class Training_Plan {
 
                 a.competition_condition(training_plan[i]);
 
-                System.out.println("Congratulations! You have successfully enrolled for " + a.training_plan + " level training class.\n");
+                System.out.println("Congratulations! You have successfully enrolled " +
+                        "for "+asni.CYAN+ a.training_plan +asni.RESET+ " level training" +
+                        " class" +
+                        ".\n");
 
                 set_plan_fee(a, i);
                 return true;

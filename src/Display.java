@@ -17,37 +17,23 @@ public class Display {
     void welcome()
     {
         System.out.println("\n---//============================\\\\---");
-        System.out.println("--|| Welcome to North Sussex Judo ||--");
+        System.out.println("--|| "+asni.YELLOW+"Welcome to North Sussex Judo" +
+                asni.RESET+" ||--");
         System.out.println("---\\\\============================//---\n");
     }
 
     void name_hello(String name)
     {
-        System.out.println("\nHello, <<"+name+">>");
+        System.out.println("\nHello, ["+asni.YELLOW+name+asni.RESET+"]");
     }
 
     void training_plan()
     {
         int[] session_time = {2,3,5};
 
-//        dash_maker(63);
-//        System.out.printf("| %24s %s %24s |\n","","Training Plan","");
-//
-//
-//        int max = max_length(plan);
-//
-//        for (int i = 0, l = plan.length; i < l ; i++)
-//        {
-//            dash_maker(63);
-//
-//            System.out.printf("| Plan - [%d] : %-"+max+"s -- %d session per week -- fee" +
-//                            " $ %.2f  |\n",i, plan[i],session_time[i],fee[i]);
-//        }
-//
-//        dash_maker(63);
-
         dash_maker(60);
-        System.out.printf("| %23s Training Plan %22s |\n","","");
+        System.out.printf("| %23s "+asni.YELLOW+"Training Plan"+asni.RESET+" %22s |\n",""
+                ,"");
         dash_maker(60);
         System.out.printf("| %3s Plan %3s | Sessions Per Week | Weekly Fee |  Monthly " +
                 "Fee |\n","","");
@@ -55,7 +41,9 @@ public class Display {
         for(int i = 0; i < 3 ; i++)
         {
             dash_maker(60);
-            System.out.printf("| %12s | %7s %d %7s |  $  %.2f  |  $  %.2f   |\n",plan[i],"", session_time[i], "",weekly_fee[i],montly_fee[i]);
+            System.out.printf("| "+asni.CYAN+"%12s"+asni.RESET+" | %7s %d %7s |  $  %" +
+                            ".2f  |  $  "+asni.MAGENTA+"%.2f"+asni.RESET+"  |\n",
+                    plan[i],"", session_time[i], "",weekly_fee[i],montly_fee[i]);
         }
 
         dash_maker(60);
@@ -67,7 +55,8 @@ public class Display {
 
 
         System.out.println("  ----------------------------------------------  ");
-        System.out.println("|           Competition Weight Category          |");
+        System.out.printf("|  %10s"+asni.YELLOW+"Competition Weight Category"+asni.RESET+
+                "%8s |\n","","");
         System.out.println("  ----------------------------------------------  ");
         System.out.println("|      Categories      | Upper Weight Limit (Kg) |");
 
@@ -76,7 +65,9 @@ public class Display {
             dash_maker(46);
 
             // %- for left align, concatenate for dynamic value, "s for format specifier
-            System.out.printf("|  %-"+max+"s  | %23s |\n",category[i],limit[i]);
+            System.out.printf("|  "+asni.CYAN+"%-"+max+"s"+asni.RESET+"  | %23s |\n",
+                    category[i],
+                    limit[i]);
         }
 
         
@@ -98,7 +89,7 @@ public class Display {
 
     void final_output(Athlete a)
     {
-        System.out.println("\nHello, athlete: "+ a.name);
+        System.out.println("\nHello, ["+asni.YELLOW+a.name+asni.RESET+"]");
 
         float p_hour = 9.00f;
         float fee= 22.00f;
@@ -110,23 +101,22 @@ public class Display {
 
         dash_maker(55);
 
-        System.out.printf("|  [1] | %22s : %-12s | $ %.2f |\n","Training Plan",
-                a.training_plan,a.total_fee.training_plan);
+        System.out.printf("|  [1] | %22s : "+asni.CYAN+"%-12s"+asni.RESET+" | $ "+asni.MAGENTA+"%.2f"+asni.RESET+" |\n","Training " +
+                        "Plan", a.training_plan,a.total_fee.training_plan);
 
         dash_maker(55);
 
-        System.out.printf("|  [2] | %22s : %-12s | $ %.2f |\n","Private " +
-                        "Cocahing Hours", a.private_coaching_hours,
-                a.total_fee.private_hours);
+        System.out.printf("|  [2] | %22s : "+asni.CYAN+"%-12s"+asni.RESET+" | $ "+asni.MAGENTA+"%.2f"+asni.RESET+" |\n","Private " +
+                        "Cocahing Hours", a.private_coaching_hours, a.total_fee.private_hours);
 
         dash_maker(55);
 
-        System.out.printf("|  [3] | %22s : %-12s | $ %.2f |\n","Total Competitions",
-                a.num_of_competitions,a.total_fee.competition_entry_fee);
+        System.out.printf("|  [3] | %22s : "+asni.CYAN+"%-12s"+asni.RESET+" | $ "+asni.MAGENTA+"%.2f"+asni.RESET+" "+ "|\n","Total Competitions",a.num_of_competitions,a.total_fee.competition_entry_fee);
 
         dash_maker(55);
 
-        System.out.printf("| %19s Total %18s | $ %.2f |\n","","",a.total_fee.total());
+        System.out.printf("| %19s Total %18s | $ "+asni.MAGENTA+"%.2f"+asni.RESET+" |\n"
+                ,"","",a.total_fee.total());
 
         dash_maker(55);
 
@@ -134,8 +124,8 @@ public class Display {
 
         String diff = weight_difference(a.weight_difference);
 
-        System.out.printf("Your current weight : (%d) kg is [%s] limit range of your " +
-                "competition weight: %s\n\n", a.current_weight,diff,a.competition_weight);
+        System.out.printf("Your current weight : (%d) kg is ["+asni.CYAN+"%s"+asni.RESET+"] limit " +
+                "range of your competition weight: %s\n\n", a.current_weight,diff,a.competition_weight);
 
     }
 
