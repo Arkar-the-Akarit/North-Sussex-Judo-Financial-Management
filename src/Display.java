@@ -28,35 +28,48 @@ public class Display {
     {
         int[] session_time = {2,3,5};
 
-        System.out.println("This is our current training plan: ");
-        System.out.println("====================================");
+        System.out.println(
+                "  ---------------------------------------------------------------");
+        System.out.println("|                     Current Training Plan              " +
+                "        " +
+            " |");
+
 
         int max = max_length(plan);
 
         for (int i = 0, l = plan.length; i < l ; i++)
         {
-            System.out.printf("Plan - [%d] : %-"+max+"s -- %d session per week -- fee $" +
-                            " " +
-                            "%2f\n",i,
-                    plan[i],session_time[i],fee[i]);
+            System.out.println(
+                    "  ---------------------------------------------------------------");
+
+            System.out.printf("| Plan - [%d] : %-"+max+"s -- %d session per week -- fee" +
+                            " $ %.2f  |\n",i, plan[i],session_time[i],fee[i]);
         }
 
-        System.out.println("------------------------------------");
+        System.out.println(
+                "  ---------------------------------------------------------------");
+
     }
 
     void weight_category()
     {
         int max = max_length(category);
 
-        System.out.println("\nThis is competition weight category with limits (kg)");
-        System.out.println("====================================================");
+
+        System.out.println("  ----------------------------------------------  ");
+        System.out.println("|           Competition Weight Category          |");
+        System.out.println("  ----------------------------------------------  ");
+        System.out.println("|      Categories      | Upper Weight Limit (Kg) |");
+
         for (int i = 0, l = category.length; i < l ; i++)
         {
+            System.out.println("  ---------------------------------------------- ");
+
             // %- for left align, concatenate for dynamic value, "s for format specifier
-            System.out.printf("[%d] -- %-"+max+"s --- Upper weight limit (kg): %s\n",i,
-                    category[i],limit[i]);
+            System.out.printf("|  %-"+max+"s  | %23s |\n",category[i],limit[i]);
         }
-        System.out.println("------------------------------------------------------");
+
+        System.out.println("  ----------------------------------------------  ");
     }
 
     private int max_length(String s[])
@@ -75,15 +88,6 @@ public class Display {
     void final_output(Athlete a)
     {
         System.out.println("\nHello, athlete: "+ a.name);
-
-        System.out.println(""+a.name);
-        System.out.println(""+a.current_weight);
-        System.out.println(""+a.competition);
-        System.out.println(""+a.num_of_competitions);
-        System.out.println(""+a.private_coaching_hours);
-        System.out.println(""+a.total_fee.training_plan);
-        System.out.println(""+a.total_fee.private_hours);
-        System.out.println(""+a.total_fee.competition_entry_fee);
 
         float p_hour = 9.00f;
         float fee= 22.00f;

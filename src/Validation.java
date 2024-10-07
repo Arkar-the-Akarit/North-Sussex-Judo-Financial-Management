@@ -15,8 +15,9 @@ public class Validation {
 
         if(!flag)
         {
-            System.out.println("Please only input the name of training plan you want to" +
-                    " attend\n");
+            System.out.println("\nPlease only input the name of training plan you want " +
+                    "to" +
+                    " attend");
             training_plan(a);
 
         }
@@ -44,7 +45,7 @@ public class Validation {
         else
         {
             s.next();
-            System.out.println("Please only input positive numbers");
+            System.out.println("\nPlease only input positive numbers");
             current_weight_input_type(a);
         }
     }
@@ -53,7 +54,8 @@ public class Validation {
     {
         if(weight < 40)
         {
-            System.out.println("You must weigh at least 40kg to participate in our judo" +
+            System.out.println("\nYou must weigh at least 40kg to participate in our " +
+                    "judo" +
                     " classes.");
             current_weight_input_type(a);
         }
@@ -95,7 +97,7 @@ public class Validation {
 
             if(total_num < 0)
             {
-                System.out.println("Please only input in positive numbers.");
+                System.out.println("\nPlease only input in positive numbers.");
                 num_of_competitions_input(a);
             }
 
@@ -114,7 +116,7 @@ public class Validation {
         {
             s.next();
 
-            System.out.println("Please only input in numbers.");
+            System.out.println("\nPlease only input in numbers.");
             num_of_competitions_input(a);
         }
     }
@@ -129,7 +131,7 @@ public class Validation {
 
         if ((choice == 'y'))
         {
-            total_private_hours(choice,a);
+            private_hours_choice(choice,a);
             return;
         }
         else if((choice == 'n'))
@@ -143,20 +145,37 @@ public class Validation {
 
     }
 
-    void total_private_hours(char c,Athlete a) {
-        int total_hours = 0;
+   private void private_hours_choice(char c, Athlete a) {
 
-        if (c == 'y') {
+        if (c == 'y')
+        {
+            total_private_hours(c,a);
+        }
+        else if (c == 'n')
+        {
+            return ;
+        }
+    }
 
-            System.out.println("How many hours of private coaching would you like to " +
-                    "receive? (maximum limit : 5 hours)");
-            System.out.print("Coaching hours requested: ");
+    private void total_private_hours(char c, Athlete a)
+    {
+        int total_hours;
+
+        System.out.println("How many hours of private coaching would you like to " +
+                "receive? (maximum limit : 5 hours)");
+        System.out.print("Coaching hours requested: ");
+
+        if(s.hasNextInt())
+        {
+
             total_hours = s.nextInt();
+            s.nextLine();
 
-            if ((total_hours < 0) || (total_hours > 5)) {
+            if ((total_hours < 0) || (total_hours > 5))
+            {
                 System.out.println("\nPlease ensure your input is within maximum " +
                         "limit : 5 hours\n");
-                total_private_hours(c,a);
+                private_hours_choice(c, a);
 
             }
             else
@@ -164,16 +183,18 @@ public class Validation {
                 a.private_coaching_hours = total_hours;
                 final int per_hour_fee = 9;
                 a.total_fee.private_hours = total_hours * per_hour_fee;
-
             }
+        }
+        else
+        {
+            s.next();
+            System.out.println("Please only input numbers only.");
+            total_private_hours(c,a);
+        }
 
-
-        } else if (c == 'n') {
-            return ;
         }
     }
 
-}
 
 
 

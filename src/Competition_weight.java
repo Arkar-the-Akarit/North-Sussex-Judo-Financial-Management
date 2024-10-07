@@ -1,9 +1,9 @@
 public class Competition_weight {
 
 
-    final private String[] category = {"Flyweight","Lightweight","light-Middlewight",
+    final private String[] category = {"Flyweight","Lightweight","Light-Middleweight",
             "Middleweight","Light-Heavyweight","Heavyweight"};
-    final private String[] limit = {"66","73","81","90","100","Upper 100"};
+    final private String[] limit = {"66","73","81","90","100","Over 100"};
 
 
     public String[] getCategory() {
