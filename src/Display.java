@@ -6,11 +6,13 @@ public class Display {
 
     // Getting arrays from training plan
     private final String[] plan = training_plan.getTraining_plan();
-    private final  float[]  fee = training_plan.getPlan_fee();
+    private final  float[] weekly_fee = training_plan.getWeekly_fee();
+    private final  float[] montly_fee = training_plan.getMontly_fee();
 
     // Gettings arrays from competition weight
     private final String[] category = competition_weight.getCategory();
     private final String[] limit = competition_weight.getLimit();
+
 
     void welcome()
     {
@@ -28,22 +30,35 @@ public class Display {
     {
         int[] session_time = {2,3,5};
 
-        dash_maker(63);
-        System.out.printf("| %24s %s %24s |\n","","Training Plan","");
+//        dash_maker(63);
+//        System.out.printf("| %24s %s %24s |\n","","Training Plan","");
+//
+//
+//        int max = max_length(plan);
+//
+//        for (int i = 0, l = plan.length; i < l ; i++)
+//        {
+//            dash_maker(63);
+//
+//            System.out.printf("| Plan - [%d] : %-"+max+"s -- %d session per week -- fee" +
+//                            " $ %.2f  |\n",i, plan[i],session_time[i],fee[i]);
+//        }
+//
+//        dash_maker(63);
 
+        dash_maker(60);
+        System.out.printf("| %23s Training Plan %22s |\n","","");
+        dash_maker(60);
+        System.out.printf("| %3s Plan %3s | Sessions Per Week | Weekly Fee |  Monthly " +
+                "Fee |\n","","");
 
-        int max = max_length(plan);
-
-        for (int i = 0, l = plan.length; i < l ; i++)
+        for(int i = 0; i < 3 ; i++)
         {
-            dash_maker(63);
-
-            System.out.printf("| Plan - [%d] : %-"+max+"s -- %d session per week -- fee" +
-                            " $ %.2f  |\n",i, plan[i],session_time[i],fee[i]);
+            dash_maker(60);
+            System.out.printf("| %12s | %7s %d %7s |  $  %.2f  |  $  %.2f   |\n",plan[i],"", session_time[i], "",weekly_fee[i],montly_fee[i]);
         }
 
-        dash_maker(63);
-
+        dash_maker(60);
     }
 
     void weight_category()
