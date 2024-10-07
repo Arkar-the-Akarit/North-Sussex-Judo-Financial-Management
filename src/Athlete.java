@@ -9,6 +9,8 @@ public class Athlete
     Boolean competition;
     int num_of_competitions;
     int private_coaching_hours;
+    String competition_weight;
+    int weight_difference;
 
     Total_fee total_fee = new Total_fee();
 

@@ -5,7 +5,8 @@ public class Training_Plan
 
     /* It should be constant */
   final private  String[] training_plan = {"Beginner","Intermediate","Elite"};
-  final private float[] plan_fee = {25, 30, 35} ;
+  final private float[] weekly_fee = {25, 30, 35} ;
+  final private float[] montly_fee = {100,120,140};
 
   Boolean match(Athlete a, String input)
   {
@@ -27,9 +28,9 @@ public class Training_Plan
 
     Athlete athlete = new Athlete();
 
-    void set_plan_fee(Athlete a,int index)
+    private void set_plan_fee(Athlete a,int index)
     {
-        a.total_fee.training_plan = plan_fee[index];
+        a.total_fee.training_plan = montly_fee[index];
     }
 
 
@@ -39,6 +40,6 @@ public class Training_Plan
     }
 
     public float[] getPlan_fee() {
-        return plan_fee;
+        return weekly_fee;
     }
 }

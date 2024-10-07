@@ -7,60 +7,54 @@ import java.util.Scanner;
 public class Main{
     public static void main(String[] args) {
 
-        Scanner s = new Scanner(System.in);
-        Display display = new Display();
+       String choice;
+
+       do{
+
+           Scanner s = new Scanner(System.in);
+           Display display = new Display();
+
+           /* Intro Welcome Message */
+           display.welcome();
+
+           Athlete athlete = new Athlete();
+
+           System.out.print("Please enter your name: ");
+           athlete.name = s.nextLine();
+
+           display.name_hello(athlete.name);
+
+           /* ----------------------- Training_plan starts ------------------------------ */
+           Validation validation = new Validation();
+
+           display.training_plan();
+           validation.training_plan(athlete);
+
+           /* -------------------- Current Weight Starts ----------------------------- */
+           validation.current_weight_input_type(athlete);
+
+           /*----------------  Competition Weight Category Starts -------------------*/
+           display.weight_category();
+           validation.category_weight_input(athlete);
+
+           /*------------------------- Num of Competition Starts -------------------------*/
+           /* Compeition is only available for inter & elite */
+           if (athlete.competition) {
+               validation.num_of_competitions_input(athlete);
+           }
+
+           /*------------------ Private coaching hours starts ------------------------*/
+           validation.apply_private_hours(athlete);
+
+           /* --------------------- Final Output --------------------------------- */
+           display.final_output(athlete);
 
 
-        /* Intro Welcome Message */
-        display.welcome();
+           /* ------------------------ Reply or not Decision ----------- */
+           choice = validation.replay();
 
+       }while(choice.equalsIgnoreCase("yes"));
 
-        Athlete athlete = new Athlete();
-
-        System.out.print("Please enter your name: ");
-        athlete.name = s.nextLine();
-
-        display.name_hello(athlete.name);
-
-
-        /* ----------------------- Training_plan starts ------------------------------ */
-
-        Validation validation = new Validation();
-
-
-        display.training_plan();
-        validation.training_plan(athlete);
-
-
-        /* -------------------- Current Weight Starts ----------------------------- */
-
-        validation.current_weight_input_type(athlete);
-
-        /*----------------  Competition Weight Category Starts -------------------*/
-
-         display.weight_category();
-         validation.category_weight_input(athlete);
-
-
-        /*------------------------- Num of Competition Starts -------------------------*/
-
-        /* Compeition is only available for inter & elite */
-        if(athlete.competition)
-        {
-            validation.num_of_competitions_input(athlete);
-        }
-
-
-
-        /*------------------ Private coaching hours starts ------------------------*/
-
-          validation.apply_private_hours(athlete);
-
-
-
-        /* --------------------- Final Output --------------------------------- */
-
-        display.final_output(athlete);
 
     }
 }

@@ -28,26 +28,21 @@ public class Display {
     {
         int[] session_time = {2,3,5};
 
-        System.out.println(
-                "  ---------------------------------------------------------------");
-        System.out.println("|                     Current Training Plan              " +
-                "        " +
-            " |");
+        dash_maker(63);
+        System.out.printf("| %24s %s %24s |\n","","Training Plan","");
 
 
         int max = max_length(plan);
 
         for (int i = 0, l = plan.length; i < l ; i++)
         {
-            System.out.println(
-                    "  ---------------------------------------------------------------");
+            dash_maker(63);
 
             System.out.printf("| Plan - [%d] : %-"+max+"s -- %d session per week -- fee" +
                             " $ %.2f  |\n",i, plan[i],session_time[i],fee[i]);
         }
 
-        System.out.println(
-                "  ---------------------------------------------------------------");
+        dash_maker(63);
 
     }
 
@@ -63,13 +58,14 @@ public class Display {
 
         for (int i = 0, l = category.length; i < l ; i++)
         {
-            System.out.println("  ---------------------------------------------- ");
+            dash_maker(46);
 
             // %- for left align, concatenate for dynamic value, "s for format specifier
             System.out.printf("|  %-"+max+"s  | %23s |\n",category[i],limit[i]);
         }
 
-        System.out.println("  ----------------------------------------------  ");
+        
+        dash_maker(46);
     }
 
     private int max_length(String s[])
@@ -92,21 +88,72 @@ public class Display {
         float p_hour = 9.00f;
         float fee= 22.00f;
 
-        System.out.println(" [1]  Training Plan: "+a.training_plan+"   $ "+a.total_fee.training_plan+"  $ "+a.total_fee.training_plan);
-        System.out.println(" [2]  Private hours: "+a.private_coaching_hours+"   $ "+p_hour+
-                "  $ "+a.total_fee.private_hours);
-        System.out.println(" [3]  Participated Competition: "+a.num_of_competitions+"  " +
-                " $ "+fee+"  $ "+a.total_fee.competition_entry_fee);
+        dash_maker(55);
+
+        System.out.printf("|  No  | %15s %s %15s |  Total  |\n","",
+                "Items","","","");
+
+        dash_maker(55);
+
+        System.out.printf("|  [1] | %22s : %-12s | $ %.2f |\n","Training Plan",
+                a.training_plan,a.total_fee.training_plan);
+
+        dash_maker(55);
+
+        System.out.printf("|  [2] | %22s : %-12s | $ %.2f |\n","Private " +
+                        "Cocahing Hours", a.private_coaching_hours,
+                a.total_fee.private_hours);
+
+        dash_maker(55);
+
+        System.out.printf("|  [3] | %22s : %-12s | $ %.2f |\n","Total Competitions",
+                a.num_of_competitions,a.total_fee.competition_entry_fee);
+
+        dash_maker(55);
+
+        System.out.printf("| %19s Total %18s | $ %.2f |\n","","",a.total_fee.total());
+
+        dash_maker(55);
 
 
-        System.out.printf("[3] Participated Competition: %d  Fee per competiton: %2f  " +
-                "Total: %2f \n",a.num_of_competitions,fee, a.total_fee.competition_entry_fee);
 
-        System.out.println("Total: "+ a.total_fee.total());
+        String diff = weight_difference(a.weight_difference);
 
-
+        System.out.printf("Your current weight : (%d) kg is [%s] limit range of your " +
+                "competition weight: %s\n\n", a.current_weight,diff,a.competition_weight);
 
     }
+
+    private String weight_difference(int diff)
+    {
+        switch(diff)
+        {
+            case -1:
+                return "below";
+
+            case 0:
+                return "within";
+
+            case 1:
+                return "over";
+
+            default:
+                return "";
+        }
+
+    }
+
+    private void dash_maker(int n)
+    {
+        System.out.print("  ");
+        for(int i = 0; i < n; i++)
+        {
+            System.out.print("-");
+        }
+        System.out.print("\n");
+    }
+
+
 
 
 
