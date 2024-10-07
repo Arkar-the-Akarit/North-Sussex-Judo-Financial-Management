@@ -10,7 +10,6 @@ public class Main{
        String choice;
 
        do{
-
            Scanner s = new Scanner(System.in);
            Display display = new Display();
 

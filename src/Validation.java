@@ -131,7 +131,7 @@ public class Validation {
         int total_hours;
 
         System.out.println("How many hours of private coaching would you like to " +
-                "receive? (maximum limit : 5 hours)");
+                "receive? (maximum limit : 20 hours)");
         System.out.print("Coaching hours requested: ");
 
         if (s.hasNextInt()) {
@@ -139,9 +139,9 @@ public class Validation {
             total_hours = s.nextInt();
             s.nextLine();
 
-            if ((total_hours < 0) || (total_hours > 5)) {
+            if ((total_hours < 0) || (total_hours > 20)) {
                 System.out.println("\nPlease ensure your input is within maximum " +
-                        "limit : 5 hours\n");
+                        "limit : 20 hours\n");
                 private_hours_choice(c, a);
 
             } else {
