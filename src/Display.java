@@ -34,8 +34,8 @@ public class Display {
 
         for (int i = 0; i < 3; i++) {
             dash_maker(60);
-            System.out.printf("| " + asni.CYAN + "%12s" + asni.RESET + " | %7s %d %7s |  $  %" +
-                            ".2f  |  $  " + asni.GREEN + "%.2f" + asni.RESET + "  |\n",
+            System.out.printf("| " + asni.CYAN + "%12s" + asni.RESET + " | %7s %d %8s |" +
+                            "  $  %.2f  |  $  " + asni.GREEN + "%.2f" + asni.RESET + "  |\n",
                     plan[i], "", session_time[i], "", weekly_fee[i], montly_fee[i]);
         }
 
