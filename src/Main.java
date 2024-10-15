@@ -2,8 +2,6 @@
 
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
 
@@ -21,32 +19,32 @@ public class Main {
             System.out.print("Please enter your name: ");
             athlete.name = s.nextLine();
 
-            display.name_hello(athlete.name);
+            display.nameHello(athlete.name);
 
             /* ----------------------- Training_plan starts ------------------------------ */
             Validation validation = new Validation();
 
-            display.training_plan();
-            validation.training_plan(athlete);
+            display.trainingPlan();
+            validation.trainingPlan(athlete);
 
             /* -------------------- Current Weight Starts ----------------------------- */
-            validation.current_weight_input_type(athlete);
+            validation.currentWeightInputType(athlete);
 
             /*----------------  Competition Weight Category Starts -------------------*/
-            display.weight_category();
-            validation.category_weight_input(athlete);
+            display.weightCategory();
+            validation.categoryWeightInput(athlete);
 
             /*------------------------- Num of Competition Starts -------------------------*/
             /* Compeition is only available for inter & elite */
             if (athlete.competition) {
-                validation.num_of_competitions_input(athlete);
+                validation.numOfCompetitionsInput(athlete);
             }
 
             /*------------------ Private coaching hours starts ------------------------*/
-            validation.apply_private_hours(athlete);
+            validation.applyPrivateHours(athlete);
 
             /* --------------------- Final Output --------------------------------- */
-            display.final_output(athlete);
+            display.finalOutput(athlete);
 
 
             /* ------------------------ Reply or not Decision ----------- */

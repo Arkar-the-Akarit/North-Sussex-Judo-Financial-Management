@@ -1,35 +1,25 @@
-import java.util.Objects;
-
-public class Athlete
-{
+public class Athlete {
 
     String name;
-    int current_weight;
-    String training_plan;
+    int currentWeight;
+    String trainingPlan;
     Boolean competition;
-    int num_of_competitions;
-    int private_coaching_hours;
-    String competition_weight;
-    int weight_difference;
+    int numOfCompetitions;
+    int privateCoachingHours;
+    String competitionWeight;
+    int weightDifference;
 
-    Total_fee total_fee = new Total_fee();
+    TotalFee totalFee = new TotalFee();
 
-    void competition_condition(String t_plan)
-    {
-        training_plan = t_plan;
+    void competitionCondition(String athleteTrainingPlan) {
+        trainingPlan = athleteTrainingPlan;
 
-
-        if(t_plan.equalsIgnoreCase("beginner"))
-        {
+        /* If training plan = beginner, not allow for competition */
+        if (athleteTrainingPlan.equalsIgnoreCase("beginner")) {
             competition = false;
             return;
         }
-
         competition = true;
-
     }
-
-
-
 }
 
